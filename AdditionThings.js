@@ -16,3 +16,18 @@ requestAnimationFrame(() => {
  * setTimeout is based on time and is not synchronized with screen updates. If the DOM hasn’t updated yet, you might get stale values.
  * equestAnimationFrame runs at the optimal time for the browser, avoiding unnecessary delays or race conditions.
  */
+
+// get file extention
+function getFileExtension(str) {
+  if (!str) return ""; // guard against null/empty
+
+  // Remove query parameters and hash fragments
+  const cleanStr = str.split("?")[0].split("#")[0];
+
+  // Find the last dot in the string
+  const lastDotIndex = cleanStr.lastIndexOf(".");
+  if (lastDotIndex === -1) return ""; // no dot → no extension
+
+  // Return everything after the last dot, lowercase
+  return cleanStr.slice(lastDotIndex + 1).toLowerCase();
+}
