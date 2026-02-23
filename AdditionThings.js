@@ -20,7 +20,6 @@ requestAnimationFrame(() => {
 // get file extention
 function getFileExtension(str) {
   if (!str) return ""; // guard against null/empty
-
   // Remove query parameters and hash fragments
   const cleanStr = str.split("?")[0].split("#")[0];
 

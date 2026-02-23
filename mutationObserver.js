@@ -1,5 +1,6 @@
 // @ts-nocheck
 /* eslint-disable */
+
 /**
  * JavaScript MutationObserver Tutorial
  * 

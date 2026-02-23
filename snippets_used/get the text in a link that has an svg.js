@@ -1,3 +1,32 @@
+/* eslint-disable */
+// @ts-nocheck
+//
+const TEST_MODE = true;
+
+function maybePreventDefault(e) {
+  if (TEST_MODE) e.preventDefault();
+}
+
+const getNormalisedUrl = (url) => {
+  try {
+    const linkUrlObj = new URL(url);
+    const currentUrlObj = new URL(window.location.href);
+    if (linkUrlObj.origin === currentUrlObj.origin) {
+      return linkUrlObj.href.replace(linkUrlObj.origin, "");
+    }
+    return linkUrlObj.href;
+  } catch {
+    return url || null;
+  }
+};
+
+function gtmPush(event = null, url = "") {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push(event);
+
+  if (url) window.location = url;
+}
+
 // 3. side nav link tracking
 function sideNavTracking() {
   const sideNavLinks = document.querySelectorAll("nav.lhs-menu a");
