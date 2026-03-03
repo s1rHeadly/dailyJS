@@ -103,12 +103,12 @@ const category = socialParent
   : sponsorsParent
     ? "sponsor"
     : linktext;
-// If condition is truthy, it returns valueIfTrue, Otherwise, it returns valueIfFalse. IF the second condition is also false, then defualt to linktext
+// If condition is truthy, return valueIfTrue; otherwise valueIfFalse. If the second condition is also false, default to linktext.
 
 // example in a div:
 // <div className={socialParent ? 'social' : sponsorsParent ? 'sponsor' : 'default'}></div
 
-// lternatives to nested ternaries
+// Alternatives to nested ternaries
 let category;
 
 if (socialParent) {
@@ -141,3 +141,75 @@ const category = socialParent
     ❌ If no → category = linkText
     
     */
+
+// =============================================================================
+// SUMMARY — || (OR) in plain English
+// =============================================================================
+// The || operator picks the first truthy value, or the last value if all are falsy.
+//
+// Think of || like asking:
+//
+//   "Do you have this? If yes → use it.
+//    If not, do you have that? If yes → use it.
+//    If not, try the next thing…"
+//
+// It's like checking your pockets for your keys, wallet, then phone:
+//
+//   const thingToUse = pocket1 || pocket2 || pocket3;
+//
+//   • If pocket1 has something → stop, use it.
+//   • If not → check pocket2.
+//   • If that's empty → check pocket3.
+//
+// Example:
+//
+//   const name = userInput || defaultName || "Anonymous";
+//
+// Step by step:
+//
+//   1. Check userInput → is it truthy (has a real value)?
+//      If yes → use it. Done.
+//   2. If no → move to next. Check defaultName → is it truthy?
+//      If yes → use it. Done.
+//   3. If no → move to next. Use "Anonymous" as the last fallback.
+
+
+
+
+
+
+
+// =============================================================================
+// SUMMARY — && (AND) in plain English
+// =============================================================================
+// The && operator returns the first falsy value, or the last value if all are truthy.
+//
+// Think of && like asking:
+//
+//   "Do you have this and this and this?"
+//   "If anything is missing → stop right there."
+//
+// It's like checking your pockets for a set of items you need all together before you can do something:
+//
+//   const canGoOut = wallet && keys && phone;
+//
+// Step by step:
+//
+//   • Check wallet → do you have it?
+//     If yes → check keys.
+//     If no → stop immediately → result is wallet (falsy).
+//
+//   • Check keys → do you have it?
+//     If yes → check phone.
+//     If no → stop immediately → result is keys (falsy).
+//
+//   • Check phone → do you have it?
+//     If yes → all items are present → result is phone (the last value).
+//
+// Example in JS:
+//
+//   const canDrive = hasLicense && hasCar && hasFuel;
+//
+//   • If hasLicense is false → stops immediately → you cannot drive.
+//   • If hasLicense is true but hasCar is false → stops at hasCar.
+//   • Only if all three are true → returns the last one (hasFuel) → you can drive.
