@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rAF vs setInterval</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <h1>Animation Comparison</h1>
+
+    <div class="container">
+      <div class="track">
+        <div class="box interval-box">setInterval</div>
+      </div>
+
+      <div class="track">
+        <div class="box raf-box">requestAnimationFrame</div>
+      </div>
+    </div>
+
+    <button id="start">Start Animation</button>
+
+    <script src="./scripts.js"></script>
+  </body>
+</html>

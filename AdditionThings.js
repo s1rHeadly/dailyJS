@@ -17,6 +17,34 @@ requestAnimationFrame(() => {
  * equestAnimationFrame runs at the optimal time for the browser, avoiding unnecessary delays or race conditions.
  */
 
+/*
+ * Key difference (this is the one to remember)
+
+ * setTimeout = time-based
+ * requestAnimationFrame = frame-based
+ * 
+ * 🧠 Rule of thumb
+ *
+ * 👉 Ask yourself:
+ *
+ * “Is this tied to something the user can see updating on screen?”
+ *
+ * YES → use requestAnimationFrame
+ * NO → use setTimeout / setInterval
+ * 
+ * 🔥 Real-world example (important for your level)
+ * Bad animation (janky)
+ * setInterval(() => {
+ *   box.style.left = box.offsetLeft + 1 + "px";
+ * }, 16);
+ * Good animation (smooth)
+ * function move() {
+ *   box.style.left = box.offsetLeft + 1 + "px";
+ *   requestAnimationFrame(move);
+ * }
+ * move();
+ */
+
 // get file extention
 function getFileExtension(str) {
   if (!str) return ""; // guard against null/empty
