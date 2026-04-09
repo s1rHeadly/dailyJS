@@ -1,0 +1,52 @@
+/* Modal */
+.video-modal {
+  width: 80vw;
+  max-width: 900px;
+  border: none;
+  padding: 0;
+}
+
+/* Backdrop */
+.video-modal::backdrop {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Layout when transcript exists */
+.video-modal:has(.video-modal__transcript) {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 80vh;
+}
+
+/* Video */
+.video-modal__video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.video-modal__video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Transcript */
+.video-modal__transcript {
+  overflow-y: auto;
+  padding: 1rem;
+  background: black;
+  color: white;
+}
+
+/* Close button */
+.video-modal__close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 10;
+  background: white;
+  border: none;
+  cursor: pointer;
+}

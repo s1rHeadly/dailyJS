@@ -1,0 +1,10 @@
+.faq-answer {
+  display: none;
+  padding: 0.5rem 1rem;
+  background: #f5f5f5;
+  border-left: 3px solid #007acc;
+}
+
+.faq-item.open .faq-answer {
+  display: block;
+}
