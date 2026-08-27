@@ -1,3 +1,21 @@
+// The cheat sheet 🧠
+//
+// When you're writing an if, ask:
+//
+// "Can BOTH things happen?"
+//
+// YES → separate ifs
+//
+// if (A) {}
+// if (B) {}
+//
+// NO → if / else
+//
+// if (A) {}
+// else {}
+//
+// That's it.
+
 // Separate ifs
 //
 // If I'm hungry, eat.
