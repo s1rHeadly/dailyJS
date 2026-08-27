@@ -34,8 +34,8 @@ function swimming() {
 
 //  Step 2 — Put them into an object (map)
 
-const workoutHandlers = {
-  running,
+const workoutHandlers = { 
+  running, // must match the function names above
   cycling,
   swimming,
 };
